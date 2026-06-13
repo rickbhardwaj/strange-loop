@@ -3,150 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Strange Loop — AI-native partnership for financial services</title>
-<meta name="description" content="Strange Loop partners with leading financial institutions to transform them into AI-native organizations.">
+<title>Strange Loop</title>
+<meta name="description" content="Strange Loop partners with leading financial services institutions to transform them into AI-native organizations.">
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* Concept 03 — "The Loop": a living feedback circuit between firm and platform.
-     The thesis, made literal: judgment flows in, leverage flows out, and it never closes. */
-  .hero--loop { background: radial-gradient(120% 120% at 50% 30%, #101013 0%, #060607 60%, #040405 100%); }
-  .hero--loop .hero__inner { padding-bottom: clamp(56px, 10vh, 120px); }
-  .hero--loop h1 { max-width: 18ch; }
-  .loop-legend {
-    position: absolute; inset: 0; z-index: 6; pointer-events: none;
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
-    text-transform: uppercase; color: rgba(244,243,239,0.5);
-  }
-  .loop-legend b { display:block; font-weight:500; color: rgba(244,243,239,0.82); letter-spacing:0.16em; }
-  .loop-legend .l { position:absolute; }
-  .loop-legend .firm     { left: clamp(8%, 26%, 30%);  top: 38%; text-align:right; transform: translate(-100%, -50%); }
-  .loop-legend .platform { right: clamp(8%, 26%, 30%); top: 38%; transform: translate(100%, -50%); }
-  @media (max-width: 760px){ .loop-legend .firm{ left: 6%; } .loop-legend .platform{ right: 6%; } }
-  @media (max-width: 540px){ .loop-legend{ display:none; } }
+  .stage--loop { background: radial-gradient(120% 120% at 50% 30%, #101013 0%, #060607 60%, #040405 100%); } /* Concept 03 */
 </style>
 </head>
 <body>
+<div class="stage stage--dark stage--loop">
+  <canvas class="stage__bg" id="loop"></canvas>
 
-<header class="nav">
-  <div class="mark">STRANGE&nbsp;LOOP <span>/ AI-NATIVE</span></div>
-  <nav class="links">
-    <a href="#thesis">Thesis</a>
-    <a href="#work">Work</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header class="nav">
+    <div class="mark">Strange&nbsp;Loop</div>
+    <div class="meta">The Loop</div>
+  </header>
 
-<section class="hero hero--dark hero--loop">
-  <canvas class="hero__canvas" id="loop"></canvas>
-  <div class="loop-legend">
-    <div class="l firm"><b>The Firm</b>Judgment · trust · relationships</div>
-    <div class="l platform"><b>The Platform</b>Agents · leverage · ownership</div>
-  </div>
-  <div class="hero__inner wrap">
-    <p class="eyebrow" style="color:rgba(244,243,239,.7)">An AI-native partner to financial services</p>
-    <h1>Judgment flows in.<br>Leverage flows out.<br><em>The loop compounds.</em></h1>
-    <p class="lede">We don't acquire the best firms — we wire them into a platform they co-own.
-       Their expertise trains it; its leverage returns to them. The loop never closes.</p>
-    <span class="scrollcue">Scroll</span>
-  </div>
-</section>
-
-<!-- ===== shared content ===== -->
-<main>
-
-<section class="band" id="thesis">
-  <div class="wrap split reveal">
+  <div class="frame">
     <div>
-      <div class="kicker-row"><span class="idx">01</span><p class="eyebrow">The thesis</p></div>
-      <p class="lead-para">The best firms are already extraordinary assets. They don't need to be bought.</p>
+      <h1 class="headline">Strange Loop partners with leading financial services institutions to transform them into <em>AI-native</em> organizations.</h1>
+      <p class="intro">We're a team of elite AI engineers from <b>Amazon Alexa</b>, <b>AWS</b>, and <b>Google</b>. Below are selected case studies:</p>
     </div>
-    <div>
-      <p>A wave of capital is betting that AI companies should acquire services firms and roll them
-         up. We're making the opposite bet.</p>
-      <p>The leading firms in financial services hold something no acquirer can manufacture: decades
-         of judgment, trust, and client relationships. What they need isn't an owner — it's an
-         <span class="pull"><em>AI-native partner.</em></span></p>
-      <p>So instead of buying firms, we align with them. Rather than rolling up professional services,
-         we help the best firms become AI-native — and give them ownership in the platform driving
-         that transformation. When they compound, we compound with them.</p>
-    </div>
-  </div>
-</section>
 
-<section class="band--tight">
-  <div class="wrap reveal">
-    <p class="eyebrow" style="margin-bottom:20px">Built by engineers from</p>
-    <div class="cred">
-      <span>Amazon&nbsp;Alexa</span><span class="dot"></span>
-      <span>AWS</span><span class="dot"></span>
-      <span>Google</span><span class="dot"></span>
-      <span>An elite team of AI engineers</span>
-    </div>
-  </div>
-</section>
+    <div class="studies">
+      <details class="study" open>
+        <summary>
+          <span class="idx">01</span>
+          <span class="client">PwC&thinsp;—&thinsp;<b>Federal Partnership Tax Preparation Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Automated complex partnership tax preparation workflows across tens of thousands of entities — work that once consumed entire seasons of specialist time.</p>
+      </details>
 
-<section class="band" id="work">
-  <div class="wrap">
-    <div class="kicker-row reveal"><span class="idx">02</span><p class="eyebrow">Selected case studies</p></div>
-    <h2 class="section-title reveal" style="margin-bottom:46px">Agents in production, inside the most
-        demanding institutions in finance.</h2>
+      <details class="study">
+        <summary>
+          <span class="idx">02</span>
+          <span class="client">PwC&thinsp;—&thinsp;<b>K-1 / K-3 Reconciliation Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Reduced manual reconciliation work by automating document review, validation, and exception handling — so professionals review judgments, not paperwork.</p>
+      </details>
 
-    <div class="cases">
-      <article class="case reveal">
-        <div class="case__meta">
-          <div class="client">PwC</div>
-          <div class="tag">Federal Tax · Partnerships</div>
-        </div>
-        <div class="case__body">
-          <h3>Federal Partnership Tax Preparation Agent</h3>
-          <p>Automated complex partnership tax preparation workflows across tens of thousands of
-             entities — work that once consumed entire seasons of specialist time.</p>
-        </div>
-      </article>
-
-      <article class="case reveal">
-        <div class="case__meta">
-          <div class="client">PwC</div>
-          <div class="tag">Reconciliation · K-1 / K-3</div>
-        </div>
-        <div class="case__body">
-          <h3>K-1 / K-3 Reconciliation Agent</h3>
-          <p>Reduced manual reconciliation by automating document review, validation, and exception
-             handling — so professionals review judgments, not paperwork.</p>
-        </div>
-      </article>
-
-      <article class="case reveal">
-        <div class="case__meta">
-          <div class="client">KKR</div>
-          <div class="tag">Funds · Management Fees</div>
-        </div>
-        <div class="case__body">
-          <h3>Management Fees Review Agent</h3>
-          <p>An AI system that analyzes management fee calculations and surfaces discrepancies across
-             complex fund structures — before they compound.</p>
-        </div>
-      </article>
+      <details class="study">
+        <summary>
+          <span class="idx">03</span>
+          <span class="client">KKR&thinsp;—&thinsp;<b>Management Fees Review Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Built an AI system that analyzes management fee calculations and surfaces discrepancies across complex fund structures — before they compound.</p>
+      </details>
     </div>
   </div>
-</section>
-
-<section class="band" id="contact">
-  <div class="wrap cta reveal">
-    <div>
-      <p class="eyebrow">Partner with us</p>
-      <h2>If you lead a firm worth keeping independent, let's build the loop.</h2>
-    </div>
-    <a class="btn" href="mailto:hello@strangeloop.ai">Start a conversation <span class="arr">→</span></a>
-  </div>
-</section>
-
-<footer class="foot wrap">
-  <span>© Strange Loop, 2026</span>
-  <span>AI-native · Financial services</span>
-  <span>hello@strangeloop.ai</span>
-</footer>
-</main>
+</div>
 
 <nav class="switcher">
   <a href="option1.html">01 · Recursion</a>
@@ -155,64 +63,40 @@
 </nav>
 
 <script>
-/* ---- "The Loop": particles circulate a lemniscate (∞). Two lobes = firm and platform;
-        the stream crossing the center is the exchange that compounds. ---- */
+/* "The Loop": particles circulate an infinity curve — a continuous, self-referential strange loop */
 (function () {
   const cv = document.getElementById('loop');
   const ctx = cv.getContext('2d');
   let w, h, dpr, cx, cy, scale;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   function resize() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     w = cv.clientWidth; h = cv.clientHeight;
     cv.width = w * dpr; cv.height = h * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    cx = w / 2; cy = h * (w < 700 ? 0.40 : 0.42);
-    scale = Math.min(w * 0.34, h * 0.46);
+    cx = w / 2; cy = h * (w < 760 ? 0.40 : 0.44);
+    scale = Math.min(w * 0.34, h * 0.5);
   }
-  window.addEventListener('resize', resize);
-  resize();
-
-  // Lemniscate of Gerono-style figure-eight, horizontal: clean ∞ with a clear center crossing.
+  window.addEventListener('resize', resize); resize();
   function pt(t) {
     const d = 1 + Math.sin(t) * Math.sin(t);
-    return {
-      x: cx + scale * Math.SQRT2 * Math.cos(t) / d,
-      y: cy + scale * Math.SQRT2 * Math.cos(t) * Math.sin(t) / d
-    };
+    return { x: cx + scale * Math.SQRT2 * Math.cos(t) / d,
+             y: cy + scale * Math.SQRT2 * Math.cos(t) * Math.sin(t) / d };
   }
-
-  const N = 150;
-  const parts = [];
-  for (let i = 0; i < N; i++) {
-    parts.push({
-      t: (i / N) * Math.PI * 2,
-      v: 0.0042 + (i % 7) * 0.00018,   // slight speed spread -> living, non-uniform stream
-      r: 0.6 + (i % 5) * 0.22,
-      bright: (i % 17 === 0)           // occasional luminous "judgment" travelling the loop
-    });
-  }
-
+  const N = 150, parts = [];
+  for (let i = 0; i < N; i++)
+    parts.push({ t: (i / N) * Math.PI * 2, v: 0.0042 + (i % 7) * 0.00018,
+                 r: 0.6 + (i % 5) * 0.22, bright: (i % 17 === 0) });
   function frame() {
-    // trails: paint a translucent veil instead of clearing
-    ctx.fillStyle = 'rgba(5,5,7,0.22)';
-    ctx.fillRect(0, 0, w, h);
-
-    // faint guide curve
+    ctx.fillStyle = 'rgba(5,5,7,0.22)'; ctx.fillRect(0, 0, w, h);
     ctx.beginPath();
     for (let t = 0; t <= Math.PI * 2 + 0.05; t += 0.05) {
-      const p = pt(t);
-      t === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+      const p = pt(t); t === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
     }
-    ctx.strokeStyle = 'rgba(244,243,239,0.06)';
-    ctx.lineWidth = 1;
-    ctx.stroke();
-
+    ctx.strokeStyle = 'rgba(244,243,239,0.06)'; ctx.lineWidth = 1; ctx.stroke();
     ctx.globalCompositeOperation = 'lighter';
     for (const p of parts) {
       const a = pt(p.t);
-      // brightness peaks as particles cross the central exchange (cos t near ±1 in y term)
       const cross = Math.abs(Math.sin(2 * p.t));
       const base = p.bright ? 0.95 : 0.34 + 0.4 * cross;
       const rad = (p.bright ? 1.8 : 1) * p.r * (1 + cross * 0.8);
@@ -220,25 +104,14 @@
       const tint = p.bright ? '210,120,70' : '244,243,239';
       g.addColorStop(0, 'rgba(' + tint + ',' + base.toFixed(2) + ')');
       g.addColorStop(1, 'rgba(' + tint + ',0)');
-      ctx.fillStyle = g;
-      ctx.beginPath();
-      ctx.arc(a.x, a.y, rad * 4, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(a.x, a.y, rad * 4, 0, Math.PI * 2); ctx.fill();
       if (!reduce) p.t += p.v;
     }
     ctx.globalCompositeOperation = 'source-over';
     requestAnimationFrame(frame);
   }
-  // prime the dark field once so trails read correctly
   ctx.fillStyle = '#050507'; ctx.fillRect(0, 0, w, h);
   frame();
-})();
-
-(function () {
-  const io = new IntersectionObserver((es) => {
-    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();
 </script>
 </body>

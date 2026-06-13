@@ -3,138 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Strange Loop — AI-native partnership for financial services</title>
-<meta name="description" content="Strange Loop partners with leading financial institutions to transform them into AI-native organizations.">
+<title>Strange Loop</title>
+<meta name="description" content="Strange Loop partners with leading financial services institutions to transform them into AI-native organizations.">
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* Concept 02 — cinematic Dallas backdrop, institutional weight */
-  .hero__video { filter: grayscale(0.35) contrast(1.05) brightness(0.92); }
-  .hero h1 { max-width: 17ch; }
-  .hero__inner { padding-bottom: clamp(56px, 11vh, 130px); }
+  video.stage__bg { filter: grayscale(0.35) contrast(1.05) brightness(0.92); } /* Concept 02 — Dallas */
 </style>
 </head>
 <body>
-
-<header class="nav">
-  <div class="mark">STRANGE&nbsp;LOOP <span>/ AI-NATIVE</span></div>
-  <nav class="links">
-    <a href="#thesis">Thesis</a>
-    <a href="#work">Work</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero hero--dark">
-  <video class="hero__video" autoplay muted loop playsinline poster=""
-         preload="auto" id="bg">
+<div class="stage stage--dark">
+  <video class="stage__bg" autoplay muted loop playsinline preload="auto" id="bg">
     <source src="dallas.mp4" type="video/mp4">
   </video>
   <div class="scrim"></div>
-  <div class="hero__inner wrap">
-    <p class="eyebrow" style="color:rgba(244,243,239,.7)">An AI-native partner to financial services</p>
-    <h1>The institutions that built finance<br>are about to <em>rebuild it.</em></h1>
-    <p class="lede">Strange Loop partners with leading financial institutions to transform them into
-       AI-native organizations — and gives them ownership in the platform driving it.</p>
-    <span class="scrollcue">Scroll</span>
-  </div>
-</section>
 
-<!-- ===== shared content ===== -->
-<main>
+  <header class="nav">
+    <div class="mark">Strange&nbsp;Loop</div>
+    <div class="meta">Dallas</div>
+  </header>
 
-<section class="band" id="thesis">
-  <div class="wrap split reveal">
+  <div class="frame">
     <div>
-      <div class="kicker-row"><span class="idx">01</span><p class="eyebrow">The thesis</p></div>
-      <p class="lead-para">The best firms are already extraordinary assets. They don't need to be bought.</p>
+      <h1 class="headline">Strange Loop partners with leading financial services institutions to transform them into <em>AI-native</em> organizations.</h1>
+      <p class="intro">We're a team of elite AI engineers from <b>Amazon Alexa</b>, <b>AWS</b>, and <b>Google</b>. Below are selected case studies:</p>
     </div>
-    <div>
-      <p>A wave of capital is betting that AI companies should acquire services firms and roll them
-         up. We're making the opposite bet.</p>
-      <p>The leading firms in financial services hold something no acquirer can manufacture: decades
-         of judgment, trust, and client relationships. What they need isn't an owner — it's an
-         <span class="pull"><em>AI-native partner.</em></span></p>
-      <p>So instead of buying firms, we align with them. Rather than rolling up professional services,
-         we help the best firms become AI-native — and give them ownership in the platform driving
-         that transformation. When they compound, we compound with them.</p>
-    </div>
-  </div>
-</section>
 
-<section class="band--tight">
-  <div class="wrap reveal">
-    <p class="eyebrow" style="margin-bottom:20px">Built by engineers from</p>
-    <div class="cred">
-      <span>Amazon&nbsp;Alexa</span><span class="dot"></span>
-      <span>AWS</span><span class="dot"></span>
-      <span>Google</span><span class="dot"></span>
-      <span>An elite team of AI engineers</span>
-    </div>
-  </div>
-</section>
+    <div class="studies">
+      <details class="study" open>
+        <summary>
+          <span class="idx">01</span>
+          <span class="client">PwC&thinsp;—&thinsp;<b>Federal Partnership Tax Preparation Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Automated complex partnership tax preparation workflows across tens of thousands of entities — work that once consumed entire seasons of specialist time.</p>
+      </details>
 
-<section class="band" id="work">
-  <div class="wrap">
-    <div class="kicker-row reveal"><span class="idx">02</span><p class="eyebrow">Selected case studies</p></div>
-    <h2 class="section-title reveal" style="margin-bottom:46px">Agents in production, inside the most
-        demanding institutions in finance.</h2>
+      <details class="study">
+        <summary>
+          <span class="idx">02</span>
+          <span class="client">PwC&thinsp;—&thinsp;<b>K-1 / K-3 Reconciliation Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Reduced manual reconciliation work by automating document review, validation, and exception handling — so professionals review judgments, not paperwork.</p>
+      </details>
 
-    <div class="cases">
-      <article class="case reveal">
-        <div class="case__meta">
-          <div class="client">PwC</div>
-          <div class="tag">Federal Tax · Partnerships</div>
-        </div>
-        <div class="case__body">
-          <h3>Federal Partnership Tax Preparation Agent</h3>
-          <p>Automated complex partnership tax preparation workflows across tens of thousands of
-             entities — work that once consumed entire seasons of specialist time.</p>
-        </div>
-      </article>
-
-      <article class="case reveal">
-        <div class="case__meta">
-          <div class="client">PwC</div>
-          <div class="tag">Reconciliation · K-1 / K-3</div>
-        </div>
-        <div class="case__body">
-          <h3>K-1 / K-3 Reconciliation Agent</h3>
-          <p>Reduced manual reconciliation by automating document review, validation, and exception
-             handling — so professionals review judgments, not paperwork.</p>
-        </div>
-      </article>
-
-      <article class="case reveal">
-        <div class="case__meta">
-          <div class="client">KKR</div>
-          <div class="tag">Funds · Management Fees</div>
-        </div>
-        <div class="case__body">
-          <h3>Management Fees Review Agent</h3>
-          <p>An AI system that analyzes management fee calculations and surfaces discrepancies across
-             complex fund structures — before they compound.</p>
-        </div>
-      </article>
+      <details class="study">
+        <summary>
+          <span class="idx">03</span>
+          <span class="client">KKR&thinsp;—&thinsp;<b>Management Fees Review Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Built an AI system that analyzes management fee calculations and surfaces discrepancies across complex fund structures — before they compound.</p>
+      </details>
     </div>
   </div>
-</section>
-
-<section class="band" id="contact">
-  <div class="wrap cta reveal">
-    <div>
-      <p class="eyebrow">Partner with us</p>
-      <h2>If you lead a firm worth keeping independent, let's build the loop.</h2>
-    </div>
-    <a class="btn" href="mailto:hello@strangeloop.ai">Start a conversation <span class="arr">→</span></a>
-  </div>
-</section>
-
-<footer class="foot wrap">
-  <span>© Strange Loop, 2026</span>
-  <span>AI-native · Financial services</span>
-  <span>hello@strangeloop.ai</span>
-</footer>
-</main>
+</div>
 
 <nav class="switcher">
   <a href="option1.html">01 · Recursion</a>
@@ -143,19 +66,12 @@
 </nav>
 
 <script>
-/* keep the backdrop playing on mobile / after tab switches */
 (function () {
   const v = document.getElementById('bg');
   const tryPlay = () => { const p = v.play(); if (p) p.catch(()=>{}); };
   v.addEventListener('canplay', tryPlay);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
   tryPlay();
-})();
-(function () {
-  const io = new IntersectionObserver((es) => {
-    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();
 </script>
 </body>
