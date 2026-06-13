@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strange Loop</title>
+<meta name="description" content="Strange Loop transforms financial services firms into AI-native institutions.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Concept 04 — René Magritte, Golconda (1953): identical figures, infinitely repeated */
+  .stage { background: #d8dde0; }
+  img.stage__bg { object-fit: cover; object-position: center top; filter: saturate(0.92) brightness(1.03); }
+  .veil {
+    position: absolute; inset: 0; z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(244,243,239,0.52) 0%, rgba(244,243,239,0.34) 38%,
+                      rgba(244,243,239,0.60) 70%, rgba(244,243,239,0.93) 100%),
+      linear-gradient(90deg, rgba(244,243,239,0.55) 0%, rgba(244,243,239,0.10) 46%, rgba(244,243,239,0) 70%);
+  }
+  .headline { text-shadow: 0 1px 0 rgba(244,243,239,0.6); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <img class="stage__bg" src="golconda.jpg" alt="René Magritte, Golconda, 1953">
+  <div class="veil"></div>
+
+  <header class="nav">
+    <div class="mark">Strange&nbsp;Loop</div>
+    <div class="meta">Golconda</div>
+  </header>
+
+  <div class="frame">
+    <div>
+      <h1 class="headline">Strange Loop transforms financial services firms into <em>AI-native</em> institutions.</h1>
+      <p class="intro">We're a team of elite AI engineers from <b>Amazon Alexa</b>, <b>AWS</b>, and <b>Google</b>. Below are selected case studies:</p>
+    </div>
+
+    <div class="studies">
+      <details class="study" open>
+        <summary>
+          <span class="idx">01</span>
+          <span class="client">PwC&thinsp;—&thinsp;<b>Federal Partnership Tax Preparation Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Automated complex partnership tax preparation workflows across tens of thousands of entities — work that once consumed entire seasons of specialist time.</p>
+      </details>
+
+      <details class="study">
+        <summary>
+          <span class="idx">02</span>
+          <span class="client">PwC&thinsp;—&thinsp;<b>K-1 / K-3 Reconciliation Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Reduced manual reconciliation work by automating document review, validation, and exception handling — so professionals review judgments, not paperwork.</p>
+      </details>
+
+      <details class="study">
+        <summary>
+          <span class="idx">03</span>
+          <span class="client">KKR&thinsp;—&thinsp;<b>Management Fees Review Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Built an AI system that analyzes management fee calculations and surfaces discrepancies across complex fund structures — before they compound.</p>
+      </details>
+    </div>
+  </div>
+</div>
+
+<nav class="switcher">
+  <a href="option1.html">01 · Recursion</a>
+  <a href="option2.html">02 · Gargantua</a>
+  <a href="option3.html">03 · The Loop</a>
+  <a href="option4.html" class="active">04 · Golconda</a>
+</nav>
+</body>
+</html>

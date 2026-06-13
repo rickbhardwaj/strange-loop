@@ -7,24 +7,28 @@
 <meta name="description" content="Strange Loop partners with leading financial services institutions to transform them into AI-native organizations.">
 <link rel="stylesheet" href="styles.css">
 <style>
-  video.stage__bg { filter: grayscale(0.35) contrast(1.05) brightness(0.92); } /* Concept 02 — Dallas */
+  /* Concept 02 — Interstellar's Gargantua: dark sphere, golden lensed accretion disk */
+  .stage { background: #020203; }
+  video.stage__bg { filter: contrast(1.08) saturate(1.08) brightness(0.96); object-position: center 42%; }
+  .scrim { background: radial-gradient(120% 90% at 50% 42%, rgba(2,2,3,0) 30%, rgba(2,2,3,0.35) 60%, rgba(2,2,3,0.92) 100%),
+                       linear-gradient(180deg, rgba(2,2,3,0.55) 0%, rgba(2,2,3,0.05) 30%, rgba(2,2,3,0.45) 70%, rgba(2,2,3,0.95) 100%); }
 </style>
 </head>
 <body>
 <div class="stage stage--dark">
   <video class="stage__bg" autoplay muted loop playsinline preload="auto" id="bg">
-    <source src="dallas.mp4" type="video/mp4">
+    <source src="blackhole.mp4" type="video/mp4">
   </video>
   <div class="scrim"></div>
 
   <header class="nav">
     <div class="mark">Strange&nbsp;Loop</div>
-    <div class="meta">Dallas</div>
+    <div class="meta">Gargantua</div>
   </header>
 
   <div class="frame">
     <div>
-      <h1 class="headline">Strange Loop partners with leading financial services institutions to transform them into <em>AI-native</em> organizations.</h1>
+      <h1 class="headline">Strange Loop transforms financial services firms into <em>AI-native</em> institutions.</h1>
       <p class="intro">We're a team of elite AI engineers from <b>Amazon Alexa</b>, <b>AWS</b>, and <b>Google</b>. Below are selected case studies:</p>
     </div>
 
@@ -61,8 +65,9 @@
 
 <nav class="switcher">
   <a href="option1.html">01 · Recursion</a>
-  <a href="option2.html" class="active">02 · Dallas</a>
+  <a href="option2.html" class="active">02 · Gargantua</a>
   <a href="option3.html">03 · The Loop</a>
+  <a href="option4.html">04 · Golconda</a>
 </nav>
 
 <script>
