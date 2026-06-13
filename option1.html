@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strange Loop — AI-native partnership for financial services</title>
+<meta name="description" content="Strange Loop partners with leading financial institutions to transform them into AI-native organizations.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Concept 01 — Escher / recursive strange-loop, stark on paper */
+  .hero { background: #f7f6f2; }
+  .hero__canvas { z-index: 0; }
+  .hero__inner::before {
+    /* hairline framing the type, echoing the recursion */
+    content: ""; position: absolute; left: 0; top: 96px; bottom: 40px; width: 1px;
+    background: linear-gradient(180deg, transparent, var(--line), transparent);
+  }
+  .hero__inner { padding-left: 30px; }
+  @media (max-width: 680px){ .hero__inner { padding-left: 0; } .hero__inner::before{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="mark">STRANGE&nbsp;LOOP <span>/ AI-NATIVE</span></div>
+  <nav class="links">
+    <a href="#thesis">Thesis</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <canvas class="hero__canvas" id="loop"></canvas>
+  <div class="hero__inner wrap">
+    <p class="eyebrow">An AI-native partner to financial services</p>
+    <h1>We don't acquire the best firms.<br>We help them <em>compound.</em></h1>
+    <p class="lede">Strange Loop partners with leading financial institutions to transform
+       them into AI-native organizations — and gives them ownership in the platform driving it.</p>
+    <span class="scrollcue">Scroll</span>
+  </div>
+</section>
+
+<!-- ===== shared content ===== -->
+<main>
+
+<section class="band" id="thesis">
+  <div class="wrap split reveal">
+    <div>
+      <div class="kicker-row"><span class="idx">01</span><p class="eyebrow">The thesis</p></div>
+      <p class="lead-para">The best firms are already extraordinary assets. They don't need to be bought.</p>
+    </div>
+    <div>
+      <p>A wave of capital is betting that AI companies should acquire services firms and roll them
+         up. We're making the opposite bet.</p>
+      <p>The leading firms in financial services hold something no acquirer can manufacture: decades
+         of judgment, trust, and client relationships. What they need isn't an owner — it's an
+         <span class="pull"><em>AI-native partner.</em></span></p>
+      <p>So instead of buying firms, we align with them. Rather than rolling up professional services,
+         we help the best firms become AI-native — and give them ownership in the platform driving
+         that transformation. When they compound, we compound with them.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band--tight">
+  <div class="wrap reveal">
+    <p class="eyebrow" style="margin-bottom:20px">Built by engineers from</p>
+    <div class="cred">
+      <span>Amazon&nbsp;Alexa</span><span class="dot"></span>
+      <span>AWS</span><span class="dot"></span>
+      <span>Google</span><span class="dot"></span>
+      <span>An elite team of AI engineers</span>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="work">
+  <div class="wrap">
+    <div class="kicker-row reveal"><span class="idx">02</span><p class="eyebrow">Selected case studies</p></div>
+    <h2 class="section-title reveal" style="margin-bottom:46px">Agents in production, inside the most
+        demanding institutions in finance.</h2>
+
+    <div class="cases">
+      <article class="case reveal">
+        <div class="case__meta">
+          <div class="client">PwC</div>
+          <div class="tag">Federal Tax · Partnerships</div>
+        </div>
+        <div class="case__body">
+          <h3>Federal Partnership Tax Preparation Agent</h3>
+          <p>Automated complex partnership tax preparation workflows across tens of thousands of
+             entities — work that once consumed entire seasons of specialist time.</p>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case__meta">
+          <div class="client">PwC</div>
+          <div class="tag">Reconciliation · K-1 / K-3</div>
+        </div>
+        <div class="case__body">
+          <h3>K-1 / K-3 Reconciliation Agent</h3>
+          <p>Reduced manual reconciliation by automating document review, validation, and exception
+             handling — so professionals review judgments, not paperwork.</p>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case__meta">
+          <div class="client">KKR</div>
+          <div class="tag">Funds · Management Fees</div>
+        </div>
+        <div class="case__body">
+          <h3>Management Fees Review Agent</h3>
+          <p>An AI system that analyzes management fee calculations and surfaces discrepancies across
+             complex fund structures — before they compound.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap cta reveal">
+    <div>
+      <p class="eyebrow">Partner with us</p>
+      <h2>If you lead a firm worth keeping independent, let's build the loop.</h2>
+    </div>
+    <a class="btn" href="mailto:hello@strangeloop.ai">Start a conversation <span class="arr">→</span></a>
+  </div>
+</section>
+
+<footer class="foot wrap">
+  <span>© Strange Loop, 2026</span>
+  <span>AI-native · Financial services</span>
+  <span>hello@strangeloop.ai</span>
+</footer>
+</main>
+
+<!-- concept switcher -->
+<nav class="switcher">
+  <a href="option1.html" class="active">01 · Recursion</a>
+  <a href="option2.html">02 · Dallas</a>
+  <a href="option3.html">03 · The Loop</a>
+</nav>
+
+<script>
+/* ---- recursive "strange loop": an endlessly zooming Droste vortex of hairline squares ---- */
+(function () {
+  const cv = document.getElementById('loop');
+  const ctx = cv.getContext('2d');
+  let w, h, dpr, cx, cy;
+  const K = 0.86;           // scale between successive frames
+  const STEP = 0.16;        // rotation between successive frames (radians)
+  const COUNT = 60;         // depth of recursion
+  let phase = 0;
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = cv.clientWidth; h = cv.clientHeight;
+    cv.width = w * dpr; cv.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    // vortex sits to the right, bleeding off-canvas — sparse, asymmetric
+    cx = w * (w < 700 ? 0.5 : 0.72);
+    cy = h * 0.46;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const base = Math.max(w, h) * 1.35;
+    ctx.lineJoin = 'miter';
+    for (let i = COUNT - 1; i >= 0; i--) {
+      const t = i + phase;
+      const s = base * Math.pow(K, t);
+      const rot = t * STEP;
+      // depth-based fade: nearer (large) squares faintest, so the eye falls inward forever
+      const depth = i / COUNT;
+      const alpha = 0.05 + 0.5 * Math.pow(depth, 1.3);
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(rot);
+      ctx.strokeStyle = 'rgba(11,11,12,' + alpha.toFixed(3) + ')';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(-s / 2, -s / 2, s, s);
+      ctx.restore();
+    }
+    if (!reduce) {
+      phase += 0.0016;             // continuous inward zoom — the loop never closes
+      if (phase >= 1) phase -= 1;  // seamless wrap: square i takes square (i+1)'s place
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* reveal on scroll */
+(function () {
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>
