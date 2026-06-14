@@ -7,41 +7,48 @@
 <meta name="description" content="Strange Loop transforms financial services firms into AI-native institutions.">
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* Concept 04 — Magritte, Golconda (1953): art pinned right at a crisp scale; copy on clean paper left */
-  .stage { background: #f4f3ef; }
-  img.stage__bg {
-    inset: 0 0 0 auto; width: 60%; height: 100%;
-    object-fit: cover; object-position: center top;
-    filter: saturate(0.95) brightness(1.02);
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 36%);
-            mask-image: linear-gradient(90deg, transparent 0%, #000 36%);
-  }
+  /* Concept — original Bauhaus geometric composition (drawn from scratch; fully free-use). */
+  .stage { background: #efe9dc; }
+  .stage__bg { z-index: 0; }
   .veil {
     position: absolute; inset: 0; z-index: 2; pointer-events: none;
-    -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px);
-    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 48%, transparent 74%);
-            mask-image: linear-gradient(90deg, #000 0%, #000 48%, transparent 74%);
-    background:
-      linear-gradient(90deg, #f4f3ef 0%, #f4f3ef 38%, rgba(244,243,239,0.92) 50%,
-                      rgba(244,243,239,0.5) 62%, rgba(244,243,239,0) 80%),
-      linear-gradient(180deg, rgba(244,243,239,0.25) 0%, rgba(244,243,239,0) 26%,
-                      rgba(244,243,239,0) 70%, rgba(244,243,239,0.55) 100%);
+    background: linear-gradient(90deg, rgba(239,233,220,0.9) 0%, rgba(239,233,220,0.5) 30%,
+                rgba(239,233,220,0) 50%);
   }
   .frame > div { max-width: 540px; }
-  .headline { text-shadow: 0 1px 0 rgba(244,243,239,0.6); }
-  @media (max-width: 860px) {
-    img.stage__bg { inset: 0; width: 100%; -webkit-mask-image: none; mask-image: none; }
-    .veil { -webkit-backdrop-filter: none; backdrop-filter: none;
-            -webkit-mask-image: none; mask-image: none;
-            background: linear-gradient(180deg, rgba(244,243,239,0.64) 0%, rgba(244,243,239,0.42) 38%,
-                        rgba(244,243,239,0.68) 70%, rgba(244,243,239,0.95) 100%); }
-    .frame > div { max-width: none; }
-  }
+  .stage .mark, .stage .navlink { color: #14110f; }
+  .nav .navlink { color: #6b6457; }
 </style>
 </head>
 <body>
 <div class="stage">
-  <img class="stage__bg" src="golconda.jpg" alt="René Magritte, Golconda, 1953">
+  <svg class="stage__bg" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMid slice" aria-label="Bauhaus geometric composition" role="img">
+    <rect width="1440" height="900" fill="#efe9dc"/>
+    <!-- structural rules (kept clear of the copy column on the left) -->
+    <line x1="720" y1="784" x2="1440" y2="784" stroke="#14110f" stroke-width="2"/>
+    <line x1="1052" y1="84" x2="1052" y2="190" stroke="#14110f" stroke-width="2"/>
+    <!-- navy bar -->
+    <rect x="1256" y="150" width="92" height="604" fill="#20458c"/>
+    <!-- yellow solid disc -->
+    <circle cx="874" cy="288" r="92" fill="#e5b23b"/>
+    <!-- split circle: red left half + ink outline -->
+    <path d="M1052 152 A248 248 0 0 0 1052 648 Z" fill="#c0392b"/>
+    <circle cx="1052" cy="400" r="248" fill="none" stroke="#14110f" stroke-width="3"/>
+    <!-- blue triangle -->
+    <path d="M734 782 L988 782 L861 566 Z" fill="#20458c"/>
+    <!-- concentric quarter-arcs, bottom-right corner -->
+    <g fill="none" stroke="#14110f" stroke-width="3">
+      <path d="M1290 900 A150 150 0 0 1 1440 750"/>
+      <path d="M1215 900 A225 225 0 0 1 1440 675"/>
+      <path d="M1140 900 A300 300 0 0 1 1440 600"/>
+    </g>
+    <!-- small black square outline -->
+    <rect x="700" y="120" width="64" height="64" fill="none" stroke="#14110f" stroke-width="3"/>
+    <!-- accent dots -->
+    <circle cx="732" cy="152" r="11" fill="#c0392b"/>
+    <circle cx="1190" cy="250" r="14" fill="#e5b23b"/>
+    <circle cx="980" cy="722" r="13" fill="#c0392b"/>
+  </svg>
   <div class="veil"></div>
 
   <header class="nav">
@@ -87,12 +94,12 @@
 </div>
 
 <nav class="switcher">
-  <a href="option4.html" class="active">Golconda</a>
+  <a href="option4.html">Golconda</a>
   <a href="option8.html">Chicago L</a>
   <a href="option9.html">Greenwich Village</a>
   <a href="option10.html">Piranesi</a>
   <a href="option11.html">Fritz Kahn</a>
-  <a href="option12.html">Bauhaus</a>
+  <a href="option12.html" class="active">Bauhaus</a>
 </nav>
 
 <div class="modal" id="about" role="dialog" aria-modal="true" aria-label="About Strange Loop">
