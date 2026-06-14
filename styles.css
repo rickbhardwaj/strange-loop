@@ -70,6 +70,58 @@ video.stage__bg { object-fit: cover; }
   font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--muted);
 }
+.nav .navlink {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted);
+  background: none; border: 0; cursor: pointer; padding: 6px 0;
+  position: relative; transition: color .2s;
+}
+.nav .navlink::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .25s;
+}
+.nav .navlink:hover { color: var(--ink); }
+.nav .navlink:hover::after { transform: scaleX(1); }
+.stage--dark .nav .navlink { color: rgba(244,243,239,0.7); }
+.stage--dark .nav .navlink:hover { color: #fff; }
+
+/* ---------- About modal: white text on black ---------- */
+.modal {
+  position: fixed; inset: 0; z-index: 200;
+  background: #08080a; color: #f4f3ef;
+  overflow-y: auto;
+  opacity: 0; visibility: hidden; transition: opacity .4s ease, visibility .4s;
+}
+.modal.open { opacity: 1; visibility: visible; }
+.modal__inner {
+  max-width: 680px; margin: 0 auto;
+  padding: clamp(84px, 15vh, 168px) var(--gutter) clamp(80px, 12vh, 120px);
+}
+.modal__eyebrow {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(244,243,239,0.55); margin: 0 0 22px;
+}
+.modal h2 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(32px, 5.2vw, 56px); line-height: 1.04; letter-spacing: -0.02em;
+  margin: 0 0 clamp(28px, 5vh, 48px);
+}
+.modal p {
+  font-family: var(--sans); font-weight: 400;
+  font-size: clamp(15.5px, 1.45vw, 18px); line-height: 1.66;
+  color: rgba(244,243,239,0.84); margin: 0 0 1.25em; max-width: 60ch;
+}
+.modal p:last-child { margin-bottom: 0; }
+.modal__close {
+  position: fixed; top: clamp(18px, 3vh, 28px); right: var(--gutter); z-index: 210;
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid rgba(244,243,239,0.3); background: rgba(0,0,0,0.2);
+  color: #f4f3ef; cursor: pointer; font-size: 18px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, border-color .2s;
+}
+.modal__close:hover { background: rgba(244,243,239,0.12); border-color: rgba(244,243,239,0.6); }
+body.modal-open { overflow: hidden; }
 
 /* ---------- content frame ---------- */
 .frame {

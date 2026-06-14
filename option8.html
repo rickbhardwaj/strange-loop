@@ -26,7 +26,7 @@
 
   <header class="nav">
     <div class="mark">Strange&nbsp;Loop</div>
-    <div class="meta">The Loop · Chicago</div>
+    <button class="navlink" type="button" data-about>About</button>
   </header>
 
   <div class="frame">
@@ -67,15 +67,21 @@
 </div>
 
 <nav class="switcher">
-  <a href="option1.html">01 · Recursion</a>
-  <a href="option2.html">02 · Gargantua</a>
-  <a href="option3.html">03 · The Loop</a>
-  <a href="option4.html">04 · Golconda</a>
-  <a href="option5.html">05 · Escher</a>
-  <a href="option6.html">06 · Ex Machina</a>
-  <a href="option7.html">07 · Wes</a>
-  <a href="option8.html" class="active">08 · Chicago L</a>
+  <a href="option4.html">Golconda</a>
+  <a href="option8.html" class="active">Chicago L</a>
 </nav>
+
+<div class="modal" id="about" role="dialog" aria-modal="true" aria-label="About Strange Loop">
+  <button class="modal__close" type="button" data-about-close aria-label="Close">&#10005;</button>
+  <div class="modal__inner">
+    <p class="modal__eyebrow">About Us</p>
+    <h2>Strange Loop partners with leading financial services firms to automate operations with AI.</h2>
+    <p>Our AI agents are built for financial workflows involving unstructured documents, labyrinthine, spreadsheets, complex calculations, and firm-specific logic.</p>
+    <p>Each AI agent is owned by the client and runs on infrastructure they own, becoming a durable firm differentiator.</p>
+    <p>We're a team of AI engineers from organizations like Amazon, Google, and UC Berkeley. We work alongside your team end-to-end: designing the product, integrating with existing systems, and supporting it in production.</p>
+    <p>We partner closely with a small number of firms, typically one per practice. Our goal is to help these firms become the leading firm in their market.</p>
+  </div>
+</div>
 
 <script>
 (function () {
@@ -85,6 +91,14 @@
   document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
   tryPlay();
 })();
+(function () {
+  const modal = document.getElementById('about');
+  const open  = () => { modal.classList.add('open');  document.body.classList.add('modal-open'); };
+  const close = () => { modal.classList.remove('open'); document.body.classList.remove('modal-open'); };
+  document.querySelectorAll('[data-about]').forEach(b => b.addEventListener('click', open));
+  document.querySelectorAll('[data-about-close]').forEach(b => b.addEventListener('click', close));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+}());
 </script>
 </body>
 </html>
