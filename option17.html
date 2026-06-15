@@ -8,13 +8,12 @@
 <meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* Concept 15 — restraint, now system-themed. The Greenoaks / Thrive / Long
-     Lake register: the header kept, the thesis statement alone in the space,
-     and the case studies stated quietly beneath the header. Light or dark
-     follows the OS setting via prefers-color-scheme. */
+  /* Concept 17 — the Minimal register, stacked. Title, statement, and the
+     selected case studies aligned in a single vertical column, sized to hold
+     to one screen. Same restraint, same system light/dark. */
   .stage { background: var(--paper); }
 
-  /* header: wordmark, with the two links stacked underneath */
+  /* header: lone About link, top-left */
   .nav--stack {
     flex-direction: column; align-items: flex-start; justify-content: flex-start;
     gap: clamp(12px, 1.8vh, 18px);
@@ -22,21 +21,36 @@
   .sublinks { display: flex; gap: clamp(20px, 3vw, 34px); }
   .sublinks .navlink { padding: 2px 0; }
 
-  /* statement + quiet case-study list, centered as one group */
-  .frame--quiet { gap: clamp(30px, 6vh, 64px); }
-  .frame--quiet .headline { max-width: 22ch; }
+  /* one column, top-aligned, everything held above the fold */
+  .frame--col {
+    justify-content: flex-start;
+    gap: clamp(14px, 2.2vh, 26px);
+    max-width: 760px;
+    padding-top: clamp(8px, 1.5vh, 18px);
+  }
+  .frame--col .headline {
+    max-width: 18ch;
+    font-size: clamp(26px, 3.4vw, 44px);
+  }
+  .frame--col .body p {
+    font-family: var(--sans); font-weight: 400;
+    font-size: clamp(13px, 1.05vw, 15.5px); line-height: 1.55;
+    color: var(--muted); margin: 0 0 0.7em; max-width: 60ch;
+  }
+  .frame--col .body p:last-child { margin-bottom: 0; }
+  .frame--col .body em { font-style: italic; color: var(--ink); }
 
-  .cases { max-width: 60ch; }
-  .caselist { margin-top: clamp(12px, 2vh, 20px); border-top: 1px solid var(--line); }
+  .cases .intro { margin-top: 0; }
+  .caselist { margin-top: clamp(8px, 1.4vh, 14px); border-top: 1px solid var(--line); }
   .case-row {
     display: grid; grid-template-columns: 40px 1fr; align-items: baseline;
     gap: clamp(12px, 2vw, 26px);
-    padding: clamp(13px, 1.9vh, 18px) 0;
+    padding: clamp(9px, 1.3vh, 13px) 0;
     border-bottom: 1px solid var(--line);
   }
   .case-row .num { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--muted); }
-  .case-row .name { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(16px, 1.7vw, 21px); }
-  .case-row .name b { font-style: normal; font-family: var(--sans); font-weight: 400; font-size: clamp(14px, 1.45vw, 17px); }
+  .case-row .name { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(15px, 1.5vw, 19px); }
+  .case-row .name b { font-style: normal; font-family: var(--sans); font-weight: 400; font-size: clamp(13px, 1.3vw, 16px); }
 
   /* ---- dark mode: follow the system ---- */
   @media (prefers-color-scheme: dark) {
@@ -59,8 +73,15 @@
     </nav>
   </header>
 
-  <div class="frame frame--quiet">
-    <h1 class="headline">Strange Loop partners with financial services institutions to build <em>proprietary AI systems</em>.</h1>
+  <div class="frame frame--col">
+    <h1 class="headline">Building the <em>Automated Firm</em></h1>
+
+    <div class="body">
+      <p>Strange Loop partners with financial services institutions to build proprietary AI systems.</p>
+      <p>Our team includes AI engineers from Amazon, Google, and UC Berkeley. We specialize in financial workflows involving unstructured documents, labyrinthine spreadsheets, complex calculations, and firm-specific expertise.</p>
+      <p>We work closely with a small number of leading firms to help them become category-defining.</p>
+      <p>Each AI agent is owned by the client, runs on infrastructure they own, and learns from every interaction&nbsp;&ndash;&nbsp;becoming a durable firm differentiator.</p>
+    </div>
 
     <section class="cases" id="cases" aria-label="Selected Case Studies">
       <p class="intro">Selected Case Studies</p>
@@ -85,9 +106,9 @@
 <nav class="switcher">
   <a href="option8.html">Chicago L</a>
   <a href="option12.html">Bauhaus</a>
-  <a href="option15.html" class="active">Minimal</a>
+  <a href="option15.html">Minimal</a>
   <a href="option16.html">Two-Column</a>
-  <a href="option17.html">Vertical</a>
+  <a href="option17.html" class="active">Vertical</a>
 </nav>
 
 <!-- About -->

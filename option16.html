@@ -8,13 +8,12 @@
 <meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* Concept 15 — restraint, now system-themed. The Greenoaks / Thrive / Long
-     Lake register: the header kept, the thesis statement alone in the space,
-     and the case studies stated quietly beneath the header. Light or dark
-     follows the OS setting via prefers-color-scheme. */
+  /* Concept 16 — the Minimal register, set in two columns. The thesis and
+     the firm statement sit on the left; the selected case studies stand
+     quietly on the right. Same restraint, same system light/dark. */
   .stage { background: var(--paper); }
 
-  /* header: wordmark, with the two links stacked underneath */
+  /* header: lone About link, top-left */
   .nav--stack {
     flex-direction: column; align-items: flex-start; justify-content: flex-start;
     gap: clamp(12px, 1.8vh, 18px);
@@ -22,11 +21,24 @@
   .sublinks { display: flex; gap: clamp(20px, 3vw, 34px); }
   .sublinks .navlink { padding: 2px 0; }
 
-  /* statement + quiet case-study list, centered as one group */
-  .frame--quiet { gap: clamp(30px, 6vh, 64px); }
-  .frame--quiet .headline { max-width: 22ch; }
+  /* two columns: lede left, cases right */
+  .split {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(40px, 7vw, 110px);
+    align-items: center;
+  }
 
-  .cases { max-width: 60ch; }
+  .lede .headline { max-width: 16ch; margin-bottom: clamp(20px, 3vh, 34px); }
+  .lede .body p {
+    font-family: var(--sans); font-weight: 400;
+    font-size: clamp(14px, 1.15vw, 16.5px); line-height: 1.62;
+    color: var(--muted); margin: 0 0 1.05em; max-width: 46ch;
+  }
+  .lede .body p:last-child { margin-bottom: 0; }
+  .lede .body em { font-style: italic; color: var(--ink); }
+
+  .cases .intro { margin-top: 0; }
   .caselist { margin-top: clamp(12px, 2vh, 20px); border-top: 1px solid var(--line); }
   .case-row {
     display: grid; grid-template-columns: 40px 1fr; align-items: baseline;
@@ -37,6 +49,10 @@
   .case-row .num { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--muted); }
   .case-row .name { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(16px, 1.7vw, 21px); }
   .case-row .name b { font-style: normal; font-family: var(--sans); font-weight: 400; font-size: clamp(14px, 1.45vw, 17px); }
+
+  @media (max-width: 820px) {
+    .split { grid-template-columns: 1fr; gap: clamp(30px, 6vh, 50px); align-items: start; }
+  }
 
   /* ---- dark mode: follow the system ---- */
   @media (prefers-color-scheme: dark) {
@@ -59,34 +75,44 @@
     </nav>
   </header>
 
-  <div class="frame frame--quiet">
-    <h1 class="headline">Strange Loop partners with financial services institutions to build <em>proprietary AI systems</em>.</h1>
-
-    <section class="cases" id="cases" aria-label="Selected Case Studies">
-      <p class="intro">Selected Case Studies</p>
-      <div class="caselist">
-        <div class="case-row">
-          <span class="num">01</span>
-          <span class="name">PwC&thinsp;—&thinsp;<b>Federal Partnership Tax Preparation Agent</b></span>
-        </div>
-        <div class="case-row">
-          <span class="num">02</span>
-          <span class="name">PwC&thinsp;—&thinsp;<b>K-1 / K-3 Reconciliation Agent</b></span>
-        </div>
-        <div class="case-row">
-          <span class="num">03</span>
-          <span class="name">KKR&thinsp;—&thinsp;<b>Management Fees Review Agent</b></span>
+  <div class="frame">
+    <div class="split">
+      <div class="lede">
+        <h1 class="headline">Building the <em>Automated Firm</em></h1>
+        <div class="body">
+          <p>Strange Loop partners with financial services institutions to build proprietary AI systems.</p>
+          <p>Our team includes AI engineers from Amazon, Google, and UC Berkeley. We specialize in financial workflows involving unstructured documents, labyrinthine spreadsheets, complex calculations, and firm-specific expertise.</p>
+          <p>We work closely with a small number of leading firms to help them become category-defining.</p>
+          <p>Each AI agent is owned by the client, runs on infrastructure they own, and learns from every interaction&nbsp;&ndash;&nbsp;becoming a durable firm differentiator.</p>
         </div>
       </div>
-    </section>
+
+      <section class="cases" id="cases" aria-label="Selected Case Studies">
+        <p class="intro">Selected Case Studies</p>
+        <div class="caselist">
+          <div class="case-row">
+            <span class="num">01</span>
+            <span class="name">PwC&thinsp;—&thinsp;<b>Federal Partnership Tax Preparation Agent</b></span>
+          </div>
+          <div class="case-row">
+            <span class="num">02</span>
+            <span class="name">PwC&thinsp;—&thinsp;<b>K-1 / K-3 Reconciliation Agent</b></span>
+          </div>
+          <div class="case-row">
+            <span class="num">03</span>
+            <span class="name">KKR&thinsp;—&thinsp;<b>Management Fees Review Agent</b></span>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </div>
 
 <nav class="switcher">
   <a href="option8.html">Chicago L</a>
   <a href="option12.html">Bauhaus</a>
-  <a href="option15.html" class="active">Minimal</a>
-  <a href="option16.html">Two-Column</a>
+  <a href="option15.html">Minimal</a>
+  <a href="option16.html" class="active">Two-Column</a>
   <a href="option17.html">Vertical</a>
 </nav>
 
