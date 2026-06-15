@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strange Loop</title>
+<meta name="description" content="Strange Loop transforms financial services firms into AI-native institutions.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Concept — original Escher-inspired composition: an isometric "tumbling
+     blocks" tessellation whose cubes flip between convex and concave
+     (drawn from scratch; fully free-use). */
+  .stage { background: #efe9dc; }
+  .stage__bg { z-index: 0; }
+  .veil {
+    position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: linear-gradient(90deg, rgba(239,233,220,0.96) 0%, rgba(239,233,220,0.6) 32%,
+                rgba(239,233,220,0) 52%);
+  }
+  .frame > div { max-width: 540px; }
+  .stage .mark, .stage .navlink { color: #14110f; }
+  .nav .navlink { color: #6b6457; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <svg class="stage__bg" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMid slice" aria-label="Escher-inspired tessellation of impossible cubes" role="img">
+    <rect width="1440" height="900" fill="#efe9dc"/>
+    <!-- isometric "tumbling blocks": three shaded face-groups read as a field
+         of cubes that flip between rising and receding -->
+    <g stroke="#14110f" stroke-width="1" stroke-opacity="0.3" stroke-linejoin="round" fill="#e6dfce">
+      <path d="M760.0,74.0 L799.8,97.0 L760.0,120.0 L720.2,97.0Z"/>
+      <path d="M839.7,74.0 L879.5,97.0 L839.7,120.0 L799.8,97.0Z"/>
+      <path d="M919.3,74.0 L959.2,97.0 L919.3,120.0 L879.5,97.0Z"/>
+      <path d="M999.0,74.0 L1038.9,97.0 L999.0,120.0 L959.2,97.0Z"/>
+      <path d="M1078.7,74.0 L1118.5,97.0 L1078.7,120.0 L1038.9,97.0Z"/>
+      <path d="M1158.4,74.0 L1198.2,97.0 L1158.4,120.0 L1118.5,97.0Z"/>
+      <path d="M1238.0,74.0 L1277.9,97.0 L1238.0,120.0 L1198.2,97.0Z"/>
+      <path d="M1317.7,74.0 L1357.6,97.0 L1317.7,120.0 L1277.9,97.0Z"/>
+      <path d="M799.8,143.0 L839.7,166.0 L799.8,189.0 L760.0,166.0Z"/>
+      <path d="M879.5,143.0 L919.3,166.0 L879.5,189.0 L839.7,166.0Z"/>
+      <path d="M959.2,143.0 L999.0,166.0 L959.2,189.0 L919.3,166.0Z"/>
+      <path d="M1038.9,143.0 L1078.7,166.0 L1038.9,189.0 L999.0,166.0Z"/>
+      <path d="M1118.5,143.0 L1158.4,166.0 L1118.5,189.0 L1078.7,166.0Z"/>
+      <path d="M1198.2,143.0 L1238.0,166.0 L1198.2,189.0 L1158.4,166.0Z"/>
+      <path d="M1277.9,143.0 L1317.7,166.0 L1277.9,189.0 L1238.0,166.0Z"/>
+      <path d="M1357.6,143.0 L1397.4,166.0 L1357.6,189.0 L1317.7,166.0Z"/>
+      <path d="M760.0,212.0 L799.8,235.0 L760.0,258.0 L720.2,235.0Z"/>
+      <path d="M839.7,212.0 L879.5,235.0 L839.7,258.0 L799.8,235.0Z"/>
+      <path d="M919.3,212.0 L959.2,235.0 L919.3,258.0 L879.5,235.0Z"/>
+      <path d="M999.0,212.0 L1038.9,235.0 L999.0,258.0 L959.2,235.0Z"/>
+      <path d="M1078.7,212.0 L1118.5,235.0 L1078.7,258.0 L1038.9,235.0Z"/>
+      <path d="M1158.4,212.0 L1198.2,235.0 L1158.4,258.0 L1118.5,235.0Z"/>
+      <path d="M1238.0,212.0 L1277.9,235.0 L1238.0,258.0 L1198.2,235.0Z"/>
+      <path d="M1317.7,212.0 L1357.6,235.0 L1317.7,258.0 L1277.9,235.0Z"/>
+      <path d="M799.8,281.0 L839.7,304.0 L799.8,327.0 L760.0,304.0Z"/>
+      <path d="M879.5,281.0 L919.3,304.0 L879.5,327.0 L839.7,304.0Z"/>
+      <path d="M959.2,281.0 L999.0,304.0 L959.2,327.0 L919.3,304.0Z"/>
+      <path d="M1038.9,281.0 L1078.7,304.0 L1038.9,327.0 L999.0,304.0Z"/>
+      <path d="M1118.5,281.0 L1158.4,304.0 L1118.5,327.0 L1078.7,304.0Z"/>
+      <path d="M1198.2,281.0 L1238.0,304.0 L1198.2,327.0 L1158.4,304.0Z"/>
+      <path d="M1277.9,281.0 L1317.7,304.0 L1277.9,327.0 L1238.0,304.0Z"/>
+      <path d="M1357.6,281.0 L1397.4,304.0 L1357.6,327.0 L1317.7,304.0Z"/>
+      <path d="M760.0,350.0 L799.8,373.0 L760.0,396.0 L720.2,373.0Z"/>
+      <path d="M839.7,350.0 L879.5,373.0 L839.7,396.0 L799.8,373.0Z"/>
+      <path d="M919.3,350.0 L959.2,373.0 L919.3,396.0 L879.5,373.0Z"/>
+      <path d="M999.0,350.0 L1038.9,373.0 L999.0,396.0 L959.2,373.0Z"/>
+      <path d="M1078.7,350.0 L1118.5,373.0 L1078.7,396.0 L1038.9,373.0Z"/>
+      <path d="M1158.4,350.0 L1198.2,373.0 L1158.4,396.0 L1118.5,373.0Z"/>
+      <path d="M1238.0,350.0 L1277.9,373.0 L1238.0,396.0 L1198.2,373.0Z"/>
+      <path d="M1317.7,350.0 L1357.6,373.0 L1317.7,396.0 L1277.9,373.0Z"/>
+      <path d="M799.8,419.0 L839.7,442.0 L799.8,465.0 L760.0,442.0Z"/>
+      <path d="M879.5,419.0 L919.3,442.0 L879.5,465.0 L839.7,442.0Z"/>
+      <path d="M959.2,419.0 L999.0,442.0 L959.2,465.0 L919.3,442.0Z"/>
+      <path d="M1038.9,419.0 L1078.7,442.0 L1038.9,465.0 L999.0,442.0Z"/>
+      <path d="M1118.5,419.0 L1158.4,442.0 L1118.5,465.0 L1078.7,442.0Z"/>
+      <path d="M1198.2,419.0 L1238.0,442.0 L1198.2,465.0 L1158.4,442.0Z"/>
+      <path d="M1277.9,419.0 L1317.7,442.0 L1277.9,465.0 L1238.0,442.0Z"/>
+      <path d="M1357.6,419.0 L1397.4,442.0 L1357.6,465.0 L1317.7,442.0Z"/>
+      <path d="M760.0,488.0 L799.8,511.0 L760.0,534.0 L720.2,511.0Z"/>
+      <path d="M839.7,488.0 L879.5,511.0 L839.7,534.0 L799.8,511.0Z"/>
+      <path d="M919.3,488.0 L959.2,511.0 L919.3,534.0 L879.5,511.0Z"/>
+      <path d="M999.0,488.0 L1038.9,511.0 L999.0,534.0 L959.2,511.0Z"/>
+      <path d="M1078.7,488.0 L1118.5,511.0 L1078.7,534.0 L1038.9,511.0Z"/>
+      <path d="M1158.4,488.0 L1198.2,511.0 L1158.4,534.0 L1118.5,511.0Z"/>
+      <path d="M1238.0,488.0 L1277.9,511.0 L1238.0,534.0 L1198.2,511.0Z"/>
+      <path d="M1317.7,488.0 L1357.6,511.0 L1317.7,534.0 L1277.9,511.0Z"/>
+      <path d="M799.8,557.0 L839.7,580.0 L799.8,603.0 L760.0,580.0Z"/>
+      <path d="M879.5,557.0 L919.3,580.0 L879.5,603.0 L839.7,580.0Z"/>
+      <path d="M959.2,557.0 L999.0,580.0 L959.2,603.0 L919.3,580.0Z"/>
+      <path d="M1038.9,557.0 L1078.7,580.0 L1038.9,603.0 L999.0,580.0Z"/>
+      <path d="M1118.5,557.0 L1158.4,580.0 L1118.5,603.0 L1078.7,580.0Z"/>
+      <path d="M1198.2,557.0 L1238.0,580.0 L1198.2,603.0 L1158.4,580.0Z"/>
+      <path d="M1277.9,557.0 L1317.7,580.0 L1277.9,603.0 L1238.0,580.0Z"/>
+      <path d="M1357.6,557.0 L1397.4,580.0 L1357.6,603.0 L1317.7,580.0Z"/>
+      <path d="M760.0,626.0 L799.8,649.0 L760.0,672.0 L720.2,649.0Z"/>
+      <path d="M839.7,626.0 L879.5,649.0 L839.7,672.0 L799.8,649.0Z"/>
+      <path d="M919.3,626.0 L959.2,649.0 L919.3,672.0 L879.5,649.0Z"/>
+      <path d="M999.0,626.0 L1038.9,649.0 L999.0,672.0 L959.2,649.0Z"/>
+      <path d="M1078.7,626.0 L1118.5,649.0 L1078.7,672.0 L1038.9,649.0Z"/>
+      <path d="M1158.4,626.0 L1198.2,649.0 L1158.4,672.0 L1118.5,649.0Z"/>
+      <path d="M1238.0,626.0 L1277.9,649.0 L1238.0,672.0 L1198.2,649.0Z"/>
+      <path d="M1317.7,626.0 L1357.6,649.0 L1317.7,672.0 L1277.9,649.0Z"/>
+    </g>
+    <g stroke="#14110f" stroke-width="1" stroke-opacity="0.3" stroke-linejoin="round" fill="#b7ad95">
+      <path d="M760.0,120.0 L760.0,166.0 L720.2,143.0 L720.2,97.0Z"/>
+      <path d="M839.7,120.0 L839.7,166.0 L799.8,143.0 L799.8,97.0Z"/>
+      <path d="M919.3,120.0 L919.3,166.0 L879.5,143.0 L879.5,97.0Z"/>
+      <path d="M999.0,120.0 L999.0,166.0 L959.2,143.0 L959.2,97.0Z"/>
+      <path d="M1078.7,120.0 L1078.7,166.0 L1038.9,143.0 L1038.9,97.0Z"/>
+      <path d="M1158.4,120.0 L1158.4,166.0 L1118.5,143.0 L1118.5,97.0Z"/>
+      <path d="M1238.0,120.0 L1238.0,166.0 L1198.2,143.0 L1198.2,97.0Z"/>
+      <path d="M1317.7,120.0 L1317.7,166.0 L1277.9,143.0 L1277.9,97.0Z"/>
+      <path d="M799.8,189.0 L799.8,235.0 L760.0,212.0 L760.0,166.0Z"/>
+      <path d="M879.5,189.0 L879.5,235.0 L839.7,212.0 L839.7,166.0Z"/>
+      <path d="M959.2,189.0 L959.2,235.0 L919.3,212.0 L919.3,166.0Z"/>
+      <path d="M1038.9,189.0 L1038.9,235.0 L999.0,212.0 L999.0,166.0Z"/>
+      <path d="M1118.5,189.0 L1118.5,235.0 L1078.7,212.0 L1078.7,166.0Z"/>
+      <path d="M1198.2,189.0 L1198.2,235.0 L1158.4,212.0 L1158.4,166.0Z"/>
+      <path d="M1277.9,189.0 L1277.9,235.0 L1238.0,212.0 L1238.0,166.0Z"/>
+      <path d="M1357.6,189.0 L1357.6,235.0 L1317.7,212.0 L1317.7,166.0Z"/>
+      <path d="M760.0,258.0 L760.0,304.0 L720.2,281.0 L720.2,235.0Z"/>
+      <path d="M839.7,258.0 L839.7,304.0 L799.8,281.0 L799.8,235.0Z"/>
+      <path d="M919.3,258.0 L919.3,304.0 L879.5,281.0 L879.5,235.0Z"/>
+      <path d="M999.0,258.0 L999.0,304.0 L959.2,281.0 L959.2,235.0Z"/>
+      <path d="M1078.7,258.0 L1078.7,304.0 L1038.9,281.0 L1038.9,235.0Z"/>
+      <path d="M1158.4,258.0 L1158.4,304.0 L1118.5,281.0 L1118.5,235.0Z"/>
+      <path d="M1238.0,258.0 L1238.0,304.0 L1198.2,281.0 L1198.2,235.0Z"/>
+      <path d="M1317.7,258.0 L1317.7,304.0 L1277.9,281.0 L1277.9,235.0Z"/>
+      <path d="M799.8,327.0 L799.8,373.0 L760.0,350.0 L760.0,304.0Z"/>
+      <path d="M879.5,327.0 L879.5,373.0 L839.7,350.0 L839.7,304.0Z"/>
+      <path d="M959.2,327.0 L959.2,373.0 L919.3,350.0 L919.3,304.0Z"/>
+      <path d="M1038.9,327.0 L1038.9,373.0 L999.0,350.0 L999.0,304.0Z"/>
+      <path d="M1118.5,327.0 L1118.5,373.0 L1078.7,350.0 L1078.7,304.0Z"/>
+      <path d="M1198.2,327.0 L1198.2,373.0 L1158.4,350.0 L1158.4,304.0Z"/>
+      <path d="M1277.9,327.0 L1277.9,373.0 L1238.0,350.0 L1238.0,304.0Z"/>
+      <path d="M1357.6,327.0 L1357.6,373.0 L1317.7,350.0 L1317.7,304.0Z"/>
+      <path d="M760.0,396.0 L760.0,442.0 L720.2,419.0 L720.2,373.0Z"/>
+      <path d="M839.7,396.0 L839.7,442.0 L799.8,419.0 L799.8,373.0Z"/>
+      <path d="M919.3,396.0 L919.3,442.0 L879.5,419.0 L879.5,373.0Z"/>
+      <path d="M999.0,396.0 L999.0,442.0 L959.2,419.0 L959.2,373.0Z"/>
+      <path d="M1078.7,396.0 L1078.7,442.0 L1038.9,419.0 L1038.9,373.0Z"/>
+      <path d="M1158.4,396.0 L1158.4,442.0 L1118.5,419.0 L1118.5,373.0Z"/>
+      <path d="M1238.0,396.0 L1238.0,442.0 L1198.2,419.0 L1198.2,373.0Z"/>
+      <path d="M1317.7,396.0 L1317.7,442.0 L1277.9,419.0 L1277.9,373.0Z"/>
+      <path d="M799.8,465.0 L799.8,511.0 L760.0,488.0 L760.0,442.0Z"/>
+      <path d="M879.5,465.0 L879.5,511.0 L839.7,488.0 L839.7,442.0Z"/>
+      <path d="M959.2,465.0 L959.2,511.0 L919.3,488.0 L919.3,442.0Z"/>
+      <path d="M1038.9,465.0 L1038.9,511.0 L999.0,488.0 L999.0,442.0Z"/>
+      <path d="M1118.5,465.0 L1118.5,511.0 L1078.7,488.0 L1078.7,442.0Z"/>
+      <path d="M1198.2,465.0 L1198.2,511.0 L1158.4,488.0 L1158.4,442.0Z"/>
+      <path d="M1277.9,465.0 L1277.9,511.0 L1238.0,488.0 L1238.0,442.0Z"/>
+      <path d="M1357.6,465.0 L1357.6,511.0 L1317.7,488.0 L1317.7,442.0Z"/>
+      <path d="M760.0,534.0 L760.0,580.0 L720.2,557.0 L720.2,511.0Z"/>
+      <path d="M839.7,534.0 L839.7,580.0 L799.8,557.0 L799.8,511.0Z"/>
+      <path d="M919.3,534.0 L919.3,580.0 L879.5,557.0 L879.5,511.0Z"/>
+      <path d="M999.0,534.0 L999.0,580.0 L959.2,557.0 L959.2,511.0Z"/>
+      <path d="M1078.7,534.0 L1078.7,580.0 L1038.9,557.0 L1038.9,511.0Z"/>
+      <path d="M1158.4,534.0 L1158.4,580.0 L1118.5,557.0 L1118.5,511.0Z"/>
+      <path d="M1238.0,534.0 L1238.0,580.0 L1198.2,557.0 L1198.2,511.0Z"/>
+      <path d="M1317.7,534.0 L1317.7,580.0 L1277.9,557.0 L1277.9,511.0Z"/>
+      <path d="M799.8,603.0 L799.8,649.0 L760.0,626.0 L760.0,580.0Z"/>
+      <path d="M879.5,603.0 L879.5,649.0 L839.7,626.0 L839.7,580.0Z"/>
+      <path d="M959.2,603.0 L959.2,649.0 L919.3,626.0 L919.3,580.0Z"/>
+      <path d="M1038.9,603.0 L1038.9,649.0 L999.0,626.0 L999.0,580.0Z"/>
+      <path d="M1118.5,603.0 L1118.5,649.0 L1078.7,626.0 L1078.7,580.0Z"/>
+      <path d="M1198.2,603.0 L1198.2,649.0 L1158.4,626.0 L1158.4,580.0Z"/>
+      <path d="M1277.9,603.0 L1277.9,649.0 L1238.0,626.0 L1238.0,580.0Z"/>
+      <path d="M1357.6,603.0 L1357.6,649.0 L1317.7,626.0 L1317.7,580.0Z"/>
+      <path d="M760.0,672.0 L760.0,718.0 L720.2,695.0 L720.2,649.0Z"/>
+      <path d="M839.7,672.0 L839.7,718.0 L799.8,695.0 L799.8,649.0Z"/>
+      <path d="M919.3,672.0 L919.3,718.0 L879.5,695.0 L879.5,649.0Z"/>
+      <path d="M999.0,672.0 L999.0,718.0 L959.2,695.0 L959.2,649.0Z"/>
+      <path d="M1078.7,672.0 L1078.7,718.0 L1038.9,695.0 L1038.9,649.0Z"/>
+      <path d="M1158.4,672.0 L1158.4,718.0 L1118.5,695.0 L1118.5,649.0Z"/>
+      <path d="M1238.0,672.0 L1238.0,718.0 L1198.2,695.0 L1198.2,649.0Z"/>
+      <path d="M1317.7,672.0 L1317.7,718.0 L1277.9,695.0 L1277.9,649.0Z"/>
+    </g>
+    <g stroke="#14110f" stroke-width="1" stroke-opacity="0.3" stroke-linejoin="round" fill="#7d7768">
+      <path d="M799.8,97.0 L799.8,143.0 L760.0,166.0 L760.0,120.0Z"/>
+      <path d="M879.5,97.0 L879.5,143.0 L839.7,166.0 L839.7,120.0Z"/>
+      <path d="M959.2,97.0 L959.2,143.0 L919.3,166.0 L919.3,120.0Z"/>
+      <path d="M1038.9,97.0 L1038.9,143.0 L999.0,166.0 L999.0,120.0Z"/>
+      <path d="M1118.5,97.0 L1118.5,143.0 L1078.7,166.0 L1078.7,120.0Z"/>
+      <path d="M1198.2,97.0 L1198.2,143.0 L1158.4,166.0 L1158.4,120.0Z"/>
+      <path d="M1277.9,97.0 L1277.9,143.0 L1238.0,166.0 L1238.0,120.0Z"/>
+      <path d="M1357.6,97.0 L1357.6,143.0 L1317.7,166.0 L1317.7,120.0Z"/>
+      <path d="M839.7,166.0 L839.7,212.0 L799.8,235.0 L799.8,189.0Z"/>
+      <path d="M919.3,166.0 L919.3,212.0 L879.5,235.0 L879.5,189.0Z"/>
+      <path d="M999.0,166.0 L999.0,212.0 L959.2,235.0 L959.2,189.0Z"/>
+      <path d="M1078.7,166.0 L1078.7,212.0 L1038.9,235.0 L1038.9,189.0Z"/>
+      <path d="M1158.4,166.0 L1158.4,212.0 L1118.5,235.0 L1118.5,189.0Z"/>
+      <path d="M1238.0,166.0 L1238.0,212.0 L1198.2,235.0 L1198.2,189.0Z"/>
+      <path d="M1317.7,166.0 L1317.7,212.0 L1277.9,235.0 L1277.9,189.0Z"/>
+      <path d="M1397.4,166.0 L1397.4,212.0 L1357.6,235.0 L1357.6,189.0Z"/>
+      <path d="M799.8,235.0 L799.8,281.0 L760.0,304.0 L760.0,258.0Z"/>
+      <path d="M879.5,235.0 L879.5,281.0 L839.7,304.0 L839.7,258.0Z"/>
+      <path d="M959.2,235.0 L959.2,281.0 L919.3,304.0 L919.3,258.0Z"/>
+      <path d="M1038.9,235.0 L1038.9,281.0 L999.0,304.0 L999.0,258.0Z"/>
+      <path d="M1118.5,235.0 L1118.5,281.0 L1078.7,304.0 L1078.7,258.0Z"/>
+      <path d="M1198.2,235.0 L1198.2,281.0 L1158.4,304.0 L1158.4,258.0Z"/>
+      <path d="M1277.9,235.0 L1277.9,281.0 L1238.0,304.0 L1238.0,258.0Z"/>
+      <path d="M1357.6,235.0 L1357.6,281.0 L1317.7,304.0 L1317.7,258.0Z"/>
+      <path d="M839.7,304.0 L839.7,350.0 L799.8,373.0 L799.8,327.0Z"/>
+      <path d="M919.3,304.0 L919.3,350.0 L879.5,373.0 L879.5,327.0Z"/>
+      <path d="M999.0,304.0 L999.0,350.0 L959.2,373.0 L959.2,327.0Z"/>
+      <path d="M1078.7,304.0 L1078.7,350.0 L1038.9,373.0 L1038.9,327.0Z"/>
+      <path d="M1158.4,304.0 L1158.4,350.0 L1118.5,373.0 L1118.5,327.0Z"/>
+      <path d="M1238.0,304.0 L1238.0,350.0 L1198.2,373.0 L1198.2,327.0Z"/>
+      <path d="M1317.7,304.0 L1317.7,350.0 L1277.9,373.0 L1277.9,327.0Z"/>
+      <path d="M1397.4,304.0 L1397.4,350.0 L1357.6,373.0 L1357.6,327.0Z"/>
+      <path d="M799.8,373.0 L799.8,419.0 L760.0,442.0 L760.0,396.0Z"/>
+      <path d="M879.5,373.0 L879.5,419.0 L839.7,442.0 L839.7,396.0Z"/>
+      <path d="M959.2,373.0 L959.2,419.0 L919.3,442.0 L919.3,396.0Z"/>
+      <path d="M1038.9,373.0 L1038.9,419.0 L999.0,442.0 L999.0,396.0Z"/>
+      <path d="M1118.5,373.0 L1118.5,419.0 L1078.7,442.0 L1078.7,396.0Z"/>
+      <path d="M1198.2,373.0 L1198.2,419.0 L1158.4,442.0 L1158.4,396.0Z"/>
+      <path d="M1277.9,373.0 L1277.9,419.0 L1238.0,442.0 L1238.0,396.0Z"/>
+      <path d="M1357.6,373.0 L1357.6,419.0 L1317.7,442.0 L1317.7,396.0Z"/>
+      <path d="M839.7,442.0 L839.7,488.0 L799.8,511.0 L799.8,465.0Z"/>
+      <path d="M919.3,442.0 L919.3,488.0 L879.5,511.0 L879.5,465.0Z"/>
+      <path d="M999.0,442.0 L999.0,488.0 L959.2,511.0 L959.2,465.0Z"/>
+      <path d="M1078.7,442.0 L1078.7,488.0 L1038.9,511.0 L1038.9,465.0Z"/>
+      <path d="M1158.4,442.0 L1158.4,488.0 L1118.5,511.0 L1118.5,465.0Z"/>
+      <path d="M1238.0,442.0 L1238.0,488.0 L1198.2,511.0 L1198.2,465.0Z"/>
+      <path d="M1317.7,442.0 L1317.7,488.0 L1277.9,511.0 L1277.9,465.0Z"/>
+      <path d="M1397.4,442.0 L1397.4,488.0 L1357.6,511.0 L1357.6,465.0Z"/>
+      <path d="M799.8,511.0 L799.8,557.0 L760.0,580.0 L760.0,534.0Z"/>
+      <path d="M879.5,511.0 L879.5,557.0 L839.7,580.0 L839.7,534.0Z"/>
+      <path d="M959.2,511.0 L959.2,557.0 L919.3,580.0 L919.3,534.0Z"/>
+      <path d="M1038.9,511.0 L1038.9,557.0 L999.0,580.0 L999.0,534.0Z"/>
+      <path d="M1118.5,511.0 L1118.5,557.0 L1078.7,580.0 L1078.7,534.0Z"/>
+      <path d="M1198.2,511.0 L1198.2,557.0 L1158.4,580.0 L1158.4,534.0Z"/>
+      <path d="M1277.9,511.0 L1277.9,557.0 L1238.0,580.0 L1238.0,534.0Z"/>
+      <path d="M1357.6,511.0 L1357.6,557.0 L1317.7,580.0 L1317.7,534.0Z"/>
+      <path d="M839.7,580.0 L839.7,626.0 L799.8,649.0 L799.8,603.0Z"/>
+      <path d="M919.3,580.0 L919.3,626.0 L879.5,649.0 L879.5,603.0Z"/>
+      <path d="M999.0,580.0 L999.0,626.0 L959.2,649.0 L959.2,603.0Z"/>
+      <path d="M1078.7,580.0 L1078.7,626.0 L1038.9,649.0 L1038.9,603.0Z"/>
+      <path d="M1158.4,580.0 L1158.4,626.0 L1118.5,649.0 L1118.5,603.0Z"/>
+      <path d="M1238.0,580.0 L1238.0,626.0 L1198.2,649.0 L1198.2,603.0Z"/>
+      <path d="M1317.7,580.0 L1317.7,626.0 L1277.9,649.0 L1277.9,603.0Z"/>
+      <path d="M1397.4,580.0 L1397.4,626.0 L1357.6,649.0 L1357.6,603.0Z"/>
+      <path d="M799.8,649.0 L799.8,695.0 L760.0,718.0 L760.0,672.0Z"/>
+      <path d="M879.5,649.0 L879.5,695.0 L839.7,718.0 L839.7,672.0Z"/>
+      <path d="M959.2,649.0 L959.2,695.0 L919.3,718.0 L919.3,672.0Z"/>
+      <path d="M1038.9,649.0 L1038.9,695.0 L999.0,718.0 L999.0,672.0Z"/>
+      <path d="M1118.5,649.0 L1118.5,695.0 L1078.7,718.0 L1078.7,672.0Z"/>
+      <path d="M1198.2,649.0 L1198.2,695.0 L1158.4,718.0 L1158.4,672.0Z"/>
+      <path d="M1277.9,649.0 L1277.9,695.0 L1238.0,718.0 L1238.0,672.0Z"/>
+      <path d="M1357.6,649.0 L1357.6,695.0 L1317.7,718.0 L1317.7,672.0Z"/>
+    </g>
+  </svg>
+  <div class="veil"></div>
+
+  <header class="nav">
+    <div class="mark">Strange&nbsp;Loop</div>
+    <button class="navlink" type="button" data-about>About</button>
+  </header>
+
+  <div class="frame">
+    <div>
+      <h1 class="headline">Strange Loop transforms financial services firms into <em>AI-native</em> institutions.</h1>
+      <p class="intro">Selected Case Studies</p>
+    </div>
+
+    <div class="studies">
+      <details class="study" open>
+        <summary>
+          <span class="idx">01</span>
+          <span class="client">PwC&thinsp;—&thinsp;<b>Federal Partnership Tax Preparation Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Automated complex partnership tax preparation workflows across tens of thousands of entities — work that once consumed entire seasons of specialist time.</p>
+      </details>
+
+      <details class="study">
+        <summary>
+          <span class="idx">02</span>
+          <span class="client">PwC&thinsp;—&thinsp;<b>K-1 / K-3 Reconciliation Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Reduced manual reconciliation work by automating document review, validation, and exception handling — so professionals review judgments, not paperwork.</p>
+      </details>
+
+      <details class="study">
+        <summary>
+          <span class="idx">03</span>
+          <span class="client">KKR&thinsp;—&thinsp;<b>Management Fees Review Agent</b></span>
+          <span class="sign">+</span>
+        </summary>
+        <p class="desc">Built an AI system that analyzes management fee calculations and surfaces discrepancies across complex fund structures — before they compound.</p>
+      </details>
+    </div>
+  </div>
+</div>
+
+<nav class="switcher">
+  <a href="option4.html">Golconda</a>
+  <a href="option8.html">Chicago L</a>
+  <a href="option9.html">Greenwich Village</a>
+  <a href="option10.html">Piranesi</a>
+  <a href="option11.html">Fritz Kahn</a>
+  <a href="option12.html">Bauhaus</a>
+  <a href="option13.html" class="active">Escher</a>
+</nav>
+
+<div class="modal" id="about" role="dialog" aria-modal="true" aria-label="About Strange Loop">
+  <button class="modal__close" type="button" data-about-close aria-label="Close">&#10005;</button>
+  <div class="modal__inner">
+    <p class="modal__eyebrow">About Us</p>
+    <p class="modal__lead">We're a team of AI engineers from organizations like Amazon, Google, and UC Berkeley. We embed inside firms and work with experts end-to-end: designing the product, integrating with existing systems, and supporting it in production.</p>
+    <p>Our AI agents are built for financial workflows involving unstructured documents, labyrinthine, spreadsheets, complex calculations, and firm-specific logic.</p>
+    <p>Each AI agent is owned by the client and runs on infrastructure they own, becoming a durable firm differentiator.</p>
+    <p>We partner closely with a small number of firms, typically one per practice. Our goal is to help these firms become the leading firm in their market.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  const modal = document.getElementById('about');
+  const open  = () => { modal.classList.add('open');  document.body.classList.add('modal-open'); };
+  const close = () => { modal.classList.remove('open'); document.body.classList.remove('modal-open'); };
+  document.querySelectorAll('[data-about]').forEach(b => b.addEventListener('click', open));
+  document.querySelectorAll('[data-about-close]').forEach(b => b.addEventListener('click', close));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+}());
+</script>
+</body>
+</html>
